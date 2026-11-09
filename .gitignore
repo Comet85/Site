@@ -1,0 +1,10 @@
+target/
+*.war
+*.zip
+*.class
+.settings/
+.project
+.classpath
+.idea/
+*.iml
+

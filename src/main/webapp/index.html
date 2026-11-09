@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Mall</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <h1 class="logo">🛍️ MyShop</h1>
+            <nav class="nav">
+                <a href="#home">홈</a>
+                <a href="#products">상품 목록</a>
+                <a href="#cart">장바구니 (<span id="cart-count">0</span>)</a>
+                <a href="#login">로그인</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <section class="hero">
+            <h2>반갑습니다! 쇼핑몰에 오신 것을 환영합니다.</h2>
+            <p>최신 트렌드 상품을 만나보세요.</p>
+        </section>
+
+        <section id="products" class="products-section">
+            <h3>인기 상품</h3>
+            <div class="product-grid" id="product-list">
+                <!-- 상품 아이템 예시 -->
+                <div class="product-card">
+                    <div class="product-img-placeholder">Product 1</div>
+                    <h4>베이직 코튼 티셔츠</h4>
+                    <p class="price">29,000원</p>
+                    <button class="btn-cart" onclick="addToCart('베이직 코튼 티셔츠')">장바구니 담기</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-img-placeholder">Product 2</div>
+                    <h4>클래식 데님 팬츠</h4>
+                    <p class="price">49,000원</p>
+                    <button class="btn-cart" onclick="addToCart('클래식 데님 팬츠')">장바구니 담기</button>
+                </div>
+                <div class="product-card">
+                    <div class="product-img-placeholder">Product 3</div>
+                    <h4>데일리 스니커즈</h4>
+                    <p class="price">79,000원</p>
+                    <button class="btn-cart" onclick="addToCart('데일리 스니커즈')">장바구니 담기</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 MyShop. All rights reserved. | WAS / WAR 배포 프로젝트</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
+
