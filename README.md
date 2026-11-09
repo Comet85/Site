@@ -1,77 +1,80 @@
 # 🛍️ Shopping Mall Project (develop)
 
 쇼핑몰 웹 프론트엔드(WEB)와 백엔드(WAS) 소스코드를 통합 관리하는 단일 브랜치 프로젝트입니다.  
-웹 리소스는 변경 빈도가 낮으므로 `src/main/webapp/`에 보관되며, WAS 빌드 시 자동으로 최종 **WAR (Web Application Archive)** 파일에 포함됩니다.
+웹 리소스는 `src/main/webapp/`에 보관되며, WAS 빌드 시 자동으로 최종 **WAR (Web Application Archive)** 파일에 포함됩니다.
+
+---
+
+## 🎨 주요 웹 페이지 구성 (WEB)
+
+| 페이지 | 파일 경로 | 주요 기능 |
+| :--- | :--- | :--- |
+| **홈 (메인)** | [`index.html`](./src/main/webapp/index.html) | 히어로 프로모션 배너, 카테고리 퀵메뉴, 실시간 인기 상품 그리드, 멤버십 혜택 배너 |
+| **상품 목록** | [`products.html`](./src/main/webapp/products.html) | 카테고리 필터(패션/디지털/뷰티/리빙), 가격대 필터, 정렬(가격순/평점순), 실시간 검색 |
+| **상품 상세** | [`product-detail.html`](./src/main/webapp/product-detail.html) | 갤러리 썸네일, 옵션/수량 선택, 장바구니 담기, 즉시 구매, 상품 상세스펙 탭 |
+| **장바구니** | [`cart.html`](./src/main/webapp/cart.html) | LocalStorage 기반 장바구니 실시간 동기화, 수량 조절 및 자동 금액 계산, 주문 요약 |
+| **로그인/가입** | [`login.html`](./src/main/webapp/login.html) | 로그인/회원가입 탭 전환 폼, 소셜 로그인 인터페이스 |
+| **주문 완료** | [`order-success.html`](./src/main/webapp/order-success.html) | 주문 번호 자동 생성, 배송지 및 결제 정보 요약 안내 |
 
 ---
 
 ## 📁 프로젝트 디렉토리 구조
 
-Java Web 표준(Maven / Gradle) 디렉토리 레이아웃을 따릅니다:
-
 ```text
 Site/
+├── .gitignore
 ├── pom.xml                               # Maven WAR 빌드 설정 파일
-├── build-war.ps1                         # 간이 WAR 빌드 스크립트 (PowerShell)
+├── build-war.ps1                         # PowerShell 즉시 WAR 패키징 스크립트
 ├── README.md                             # 프로젝트 안내 문서
 └── src/
     └── main/
-        ├── java/                         # ☕ [WAS] 백엔드 Java 소스코드
-        │   └── com/shop/
-        │       └── Application.java
+        ├── java/com/shop/                # ☕ [WAS] 백엔드 Java 소스코드
+        │   └── Application.java
         ├── resources/                    # ⚙️ [WAS] 백엔드 설정 파일
         │   └── application.properties
-        └── webapp/                       # 🌐 [WEB] 웹 프론트엔드 리소스 (변경 최소화)
+        └── webapp/                       # 🌐 [WEB] 쇼핑몰 웹 리소스
             ├── index.html                # 쇼핑몰 메인 페이지
+            ├── products.html             # 상품 목록 & 필터 페이지
+            ├── product-detail.html       # 상품 상세 페이지
+            ├── cart.html                 # 장바구니 페이지
+            ├── login.html                # 로그인/회원가입 페이지
+            ├── order-success.html        # 주문 완료 페이지
             ├── css/
-            │   └── style.css             # 스타일시트
+            │   └── style.css             # 모던 반응형 디자인 시스템
             ├── js/
-            │   └── app.js                # 클라이언트 스크립트
-            ├── images/                   # 정적 이미지 리소스
+            │   └── app.js                # 장바구니(LocalStorage), 토스트 알림, 필터
             └── WEB-INF/
                 └── web.xml               # 서블릿 배포 서술자
 ```
 
 ---
 
-## 🛠️ 역할 구분 및 개발 방법
+## 💻 로컬에서 미리보기 (Preview)
 
-1. **🌐 웹 (WEB) 리소스**:
-   - 위치: [`src/main/webapp/`](./src/main/webapp/)
-   - 정적 웹 페이지(HTML, CSS, JS, 이미지)가 위치합니다.
-   - 평상시 변경이 거의 없더라도, WAS 빌드 시 자동으로 WAR 파일의 루트(`/`)로 패키징되므로 별도 복사 작업이 필요 없습니다.
+웹 브라우저를 통해 지금 바로 확인하실 수 있습니다:
 
-2. **☕ WAS 백엔드 개발**:
-   - 위치: [`src/main/java/`](./src/main/java/) 및 [`src/main/resources/`](./src/main/resources/)
-   - 비즈니스 로직, 서블릿/컨트롤러, DB 연동 코드를 개발합니다.
+- **메인 홈**: [src/main/webapp/index.html](file:///C:/Users/Comet/Documents/Code/Site/src/main/webapp/index.html) 더블 클릭
+- 또는 PowerShell 실행:
+  ```powershell
+  Start-Process "C:\Users\Comet\Documents\Code\Site\src\main\webapp\index.html"
+  ```
 
 ---
 
-## 📦 WAR 파일 빌드 방법
+## 📦 WAR 파일 빌드 & 서버 배포
 
-### 방법 1. 간이 빌드 (PowerShell 스크립트 - Java/Maven 미설치 시 추천)
-`Site` 디렉토리에서 아래 스크립트를 실행하면 즉시 `target/shopping-mall.war`가 생성됩니다:
-
+### 1. WAR 빌드 실행
 ```powershell
 .\build-war.ps1
 ```
+- 결과물: `Site/target/shopping-mall.war` (약 25KB, 모든 웹페이지 포함)
 
-### 방법 2. Maven 표준 빌드 (JDK 및 Maven 환경)
-```bash
-mvn clean package
-```
-- 빌드 결과물: `target/shopping-mall.war`
-
----
-
-## 🚀 배포 방법
-
-생성된 `shopping-mall.war` 파일을 Apache Tomcat 등의 WAS 서버 `webapps/` 디렉터리에 복사한 후 서버를 구동하면 자동으로 배포됩니다:
-- 접속 주소: `http://localhost:8080/shopping-mall/`
+### 2. 서버 배포 안내
+- **Nginx (정적 웹)**: `src/main/webapp/` 내용을 `/usr/share/nginx/html/`로 복사
+- **Tomcat (WAS)**: `target/shopping-mall.war` 파일을 Tomcat의 `webapps/`로 복사
 
 ---
 
 ## 📄 라이선스 (License)
 
 이 프로젝트는 [Apache License 2.0](./LICENSE)을 따릅니다.
-

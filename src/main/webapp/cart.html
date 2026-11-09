@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니 - MyShop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <span>🎉 첫 회원가입 시 10,000원 웰컴 쿠폰팩 즉시 지급!</span>
+            <div class="top-bar-links">
+                <a href="login.html">로그인</a>
+                <a href="login.html?tab=signup">회원가입</a>
+                <a href="#">고객센터</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-main">
+            <a href="index.html" class="logo">
+                <span>🛍️</span> MyShop
+            </a>
+
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="상품 검색...">
+            </div>
+
+            <div class="nav-actions">
+                <a href="login.html" class="nav-btn">
+                    <span style="font-size: 1.3rem;">👤</span>
+                    <span>마이페이지</span>
+                </a>
+                <a href="cart.html" class="nav-btn">
+                    <span style="font-size: 1.3rem;">🛒</span>
+                    <span>장바구니</span>
+                    <span class="badge-count">0</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="gnb-menu">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="products.html">전체상품</a></li>
+                    <li><a href="products.html?filter=best">베스트 랭킹</a></li>
+                    <li><a href="products.html?filter=new">신상품</a></li>
+                    <li><a href="cart.html" class="active">장바구니</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+        <div class="container">
+            <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 24px;">🛒 내 장바구니</h2>
+
+            <!-- Empty Cart Message -->
+            <div id="cart-empty-message" style="display: none; background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 60px; text-align: center;">
+                <div style="font-size: 4rem; margin-bottom: 16px;">🛒</div>
+                <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 8px;">장바구니가 비어 있습니다.</h3>
+                <p style="color: #64748b; margin-bottom: 24px;">원하시는 트렌디한 상품들을 장바구니에 담아보세요!</p>
+                <a href="products.html" class="btn btn-primary" style="padding: 12px 28px;">인기 상품 구경하러 가기</a>
+            </div>
+
+            <!-- Cart Content Wrapper -->
+            <div class="cart-layout" id="cart-content-wrapper">
+                <!-- Items Table -->
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <span style="font-size: 0.9rem; color: #64748b;">담긴 상품 목록</span>
+                        <button style="background: none; border: none; color: #ef4444; font-size: 0.85rem; font-weight: 600; cursor: pointer;" onclick="clearCart()">전체 비우기</button>
+                    </div>
+
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>상품 정보</th>
+                                <th style="width: 120px;">단가</th>
+                                <th style="width: 130px;">수량</th>
+                                <th style="width: 130px;">주문금액</th>
+                                <th style="width: 80px;">관리</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items-body">
+                            <!-- Injected dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Order Summary -->
+                <aside class="cart-summary-box">
+                    <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 20px;">주문 결제 금액</h3>
+
+                    <div class="summary-row">
+                        <span style="color: #64748b;">총 상품금액</span>
+                        <span id="cart-subtotal" style="font-weight: 700;">0원</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span style="color: #64748b;">배송비 (5만원 이상 무료)</span>
+                        <span id="cart-shipping" style="font-weight: 700;">0원</span>
+                    </div>
+
+                    <div class="summary-row" style="color: #10b981;">
+                        <span>회원 할인 쿠폰</span>
+                        <span style="font-weight: 700;">-0원</span>
+                    </div>
+
+                    <div class="summary-row summary-total">
+                        <span>최종 결제 예상 금액</span>
+                        <span id="cart-grand-total">0원</span>
+                    </div>
+
+                    <div style="margin: 24px 0 16px;">
+                        <button class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 1.1rem;" onclick="checkout()">
+                            결제하기 (주문서 작성) →
+                        </button>
+                    </div>
+
+                    <p style="font-size: 0.8rem; color: #94a3b8; text-align: center; line-height: 1.5;">
+                        안전한 결제 시스템 (SSL 256bit 암호화 지원)<br>
+                        WAS 백엔드 결제 API 연동 준비 완료
+                    </p>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border: none; padding-top: 0;">
+                <span>&copy; 2026 MyShop Co., Ltd. All rights reserved.</span>
+                <span>WAS / WAR 배포 아키텍처 호환</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script>
+        function checkout() {
+            const cart = getCart();
+            if (cart.length === 0) {
+                alert("장바구니가 비어 있습니다.");
+                return;
+            }
+            window.location.href = "order-success.html";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderCartPage();
+        });
+    </script>
+</body>
+</html>
+

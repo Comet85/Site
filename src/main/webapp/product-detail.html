@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 상세정보 - MyShop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <span>🎉 첫 회원가입 시 10,000원 웰컴 쿠폰팩 즉시 지급!</span>
+            <div class="top-bar-links">
+                <a href="login.html">로그인</a>
+                <a href="login.html?tab=signup">회원가입</a>
+                <a href="#">고객센터</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-main">
+            <a href="index.html" class="logo">
+                <span>🛍️</span> MyShop
+            </a>
+
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="상품 검색...">
+            </div>
+
+            <div class="nav-actions">
+                <a href="login.html" class="nav-btn">
+                    <span style="font-size: 1.3rem;">👤</span>
+                    <span>마이페이지</span>
+                </a>
+                <a href="cart.html" class="nav-btn">
+                    <span style="font-size: 1.3rem;">🛒</span>
+                    <span>장바구니</span>
+                    <span class="badge-count">0</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="gnb-menu">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">홈</a></li>
+                    <li><a href="products.html">전체상품</a></li>
+                    <li><a href="products.html?filter=best">베스트 랭킹</a></li>
+                    <li><a href="products.html?filter=new">신상품</a></li>
+                    <li><a href="cart.html">장바구니</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-wrapper">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 24px;">
+                <a href="index.html">홈</a> &gt; <a href="products.html">전체상품</a> &gt; <span id="detail-category" style="color: #1e293b; font-weight: 600;">CATEGORY</span>
+            </div>
+
+            <!-- Detail Grid Layout -->
+            <div class="detail-grid">
+                <!-- Gallery Section -->
+                <div class="detail-gallery">
+                    <div class="main-preview-img" id="detail-icon">
+                        📦
+                    </div>
+                    <div class="gallery-thumbs">
+                        <button class="thumb-btn active">🌟</button>
+                        <button class="thumb-btn">📸</button>
+                        <button class="thumb-btn">🔍</button>
+                    </div>
+                </div>
+
+                <!-- Info & Purchase Section -->
+                <div class="detail-info">
+                    <span style="color: #2563eb; font-weight: 700; font-size: 0.88rem; margin-bottom: 6px;">OFFICIAL AUTHENTIC</span>
+                    <h2 class="detail-title" id="detail-title">상품명을 불러오는 중...</h2>
+                    
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <span id="detail-rating" style="color: #eab308; font-weight: 700;">★ 4.9 (120개 리뷰)</span>
+                        <span style="color: #cbd5e1;">|</span>
+                        <span style="color: #10b981; font-weight: 600; font-size: 0.9rem;">재고 보유 (당일출고 가능)</span>
+                    </div>
+
+                    <div class="detail-price-box">
+                        <div style="display: flex; align-items: baseline; gap: 10px;">
+                            <span class="discount" id="detail-discount" style="font-size: 1.5rem;">20%</span>
+                            <span class="price" id="detail-price" style="font-size: 1.8rem; color: #1e293b;">0원</span>
+                            <span class="original-price" id="detail-original-price" style="font-size: 1rem;">0원</span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #64748b; margin-top: 8px;">
+                            무이자 할부 최대 6개월 지원 | 적립금 최대 5% 적립
+                        </div>
+                    </div>
+
+                    <!-- Option Selector -->
+                    <div class="detail-options">
+                        <div>
+                            <div class="option-label">상품 옵션 선택</div>
+                            <select class="option-select" id="detail-option-select">
+                                <option value="기본 / Free">옵션 1: 기본 (Free Size / Default Color)</option>
+                                <option value="블랙 / M">옵션 2: 매트 블랙 (M)</option>
+                                <option value="화이트 / L">옵션 3: 퓨어 화이트 (L)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <div class="option-label">구매 수량</div>
+                            <div class="quantity-control">
+                                <button class="quantity-btn" onclick="changeDetailQty(-1)">-</button>
+                                <input type="text" class="quantity-input" id="detail-qty-input" value="1" readonly>
+                                <button class="quantity-btn" onclick="changeDetailQty(1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div style="display: flex; gap: 12px; margin-top: auto;">
+                        <button class="btn btn-outline" style="flex: 1; padding: 16px; font-size: 1.05rem;" onclick="addDetailToCart()">
+                            🛒 장바구니 담기
+                        </button>
+                        <button class="btn btn-primary" style="flex: 1.5; padding: 16px; font-size: 1.05rem;" onclick="buyNow()">
+                            ⚡ 바로 구매하기
+                        </button>
+                    </div>
+
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-top: 24px; font-size: 0.85rem; color: #64748b; line-height: 1.6;">
+                        🚚 <b>배송 안내</b>: 30,000원 이상 구매 시 무료배송 (제주/도서산간 3,000원 추가)<br>
+                        🔄 <b>교환/반품</b>: 수령 후 7일 이내 신청 가능
+                    </div>
+                </div>
+            </div>
+
+            <!-- Description Tabs -->
+            <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 36px;">
+                <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 16px;">상품 상세 정보 및 스펙</h3>
+                <p style="color: #475569; line-height: 1.8; margin-bottom: 24px;">
+                    본 상품은 엄격한 품질 검수를 거쳐 제작된 공식 정품입니다. 일상 속에서 최상의 만족감을 드리기 위해 세심한 디테일까지 고려하여 완성되었습니다.
+                </p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: #f8fafc; padding: 20px; border-radius: 8px; font-size: 0.9rem;">
+                    <div>• <b>소재/재질</b>: 최고급 프리미엄 원자재</div>
+                    <div>• <b>제조국</b>: 대한민국 (Republic of Korea)</div>
+                    <div>• <b>A/S 책임자</b>: MyShop 고객만족센터 (1588-0000)</div>
+                    <div>• <b>품질보증기준</b>: 공정거래위원회 고시 소비자분쟁해결기준 준수</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border: none; padding-top: 0;">
+                <span>&copy; 2026 MyShop Co., Ltd. All rights reserved.</span>
+                <span>WAS / WAR 배포 아키텍처 호환</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script>
+        function buyNow() {
+            addDetailToCart();
+            setTimeout(() => {
+                window.location.href = "cart.html";
+            }, 400);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            initDetailPage();
+        });
+    </script>
+</body>
+</html>
+
