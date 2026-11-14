@@ -3,18 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주문 완료 - MyShop</title>
+    <title>트릿 코드 발송 완료 - Share Treats</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Build Version Bar -->
+    <div class="build-version-bar">
+        <div class="container">
+            <span>Share Treats Web UI · <strong class="build-version-badge js-build-version">Build v0.01</strong></span>
+            <span>Design Theme: sharetreats.ph/welcome</span>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container header-main">
             <a href="index.html" class="logo">
-                <span>🛍️</span> MyShop
+                <span class="logo-icon-box">🎁</span>
+                <div>
+                    ShareTreats
+                    <span class="logo-sub">SENT!</span>
+                </div>
             </a>
             <div class="nav-actions">
-                <a href="index.html" class="nav-btn">홈으로</a>
+                <a href="index.html" class="nav-btn">Welcome 홈으로</a>
             </div>
         </div>
     </header>
@@ -22,35 +34,37 @@
     <!-- Main Content -->
     <main class="main-wrapper">
         <div class="container" style="max-width: 680px;">
-            <div style="background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 48px 36px; text-align: center; box-shadow: var(--shadow-sm); margin-top: 20px;">
-                <div style="font-size: 4.5rem; margin-bottom: 20px;">🎉</div>
-                <span style="background: #ecfdf5; color: #059669; font-weight: 700; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem;">결제 및 주문 완료</span>
-                <h2 style="font-size: 1.8rem; font-weight: 800; margin: 16px 0 8px;">주문이 정상적으로 접수되었습니다!</h2>
-                <p style="color: #64748b; font-size: 0.95rem; margin-bottom: 32px;">고객님의 소중한 상품을 꼼꼼하게 검수하여 안전하게 배송해 드리겠습니다.</p>
+            <div style="background: white; border: 1.5px solid #f1e4dd; border-radius: 24px; padding: 48px 36px; text-align: center; box-shadow: var(--shadow-md); margin-top: 16px;">
+                <div style="font-size: 4.5rem; margin-bottom: 16px;">🥳</div>
+                <span style="background: #e0f2f1; color: #00897b; font-weight: 800; padding: 6px 16px; border-radius: 999px; font-size: 0.85rem;">⚡ INSTANT SMS TREAT CODE DISPATCHED</span>
+                <h2 style="font-size: 1.85rem; font-weight: 900; margin: 16px 0 8px;">모바일 트릿 코드가 즉시 발송되었습니다!</h2>
+                <p style="color: #786b65; font-size: 0.95rem; margin-bottom: 28px;">
+                    수신자의 휴대폰 문자(SMS)로 스티커 인사말 카드와 함께 매장 교환용 고유 트릿 코드가 전송되었습니다.
+                </p>
 
-                <!-- Order Details Box -->
-                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; text-align: left; margin-bottom: 32px; font-size: 0.9rem;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #e2e8f0;">
-                        <span style="color: #64748b;">주문 번호</span>
-                        <span style="font-weight: 700; color: #2563eb;" id="order-number">ORD-20261109-8472</span>
+                <!-- Digital Treat Code Ticket Box -->
+                <div style="background: #fffaf7; border: 2px dashed #ffab91; border-radius: 16px; padding: 24px; text-align: left; margin-bottom: 32px; font-size: 0.92rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f1e4dd;">
+                        <span style="color: #786b65;">발급된 Treat Code</span>
+                        <span style="font-weight: 900; color: #ff5722; font-family: monospace; font-size: 1.1rem;" id="order-number">ST-2026-8472</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
-                        <span style="color: #64748b;">결제 수단</span>
-                        <span style="font-weight: 600;">신용/체크카드 (일시불)</span>
+                        <span style="color: #786b65;">결제 수단</span>
+                        <span style="font-weight: 700;">모바일 간편결제 (Load / e-Wallet)</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
-                        <span style="color: #64748b;">배송지 정보</span>
-                        <span style="font-weight: 600;">서울시 강남구 테헤란로 123</span>
+                        <span style="color: #786b65;">수신자 번호 (SMS 전송)</span>
+                        <span style="font-weight: 700;">010-9876-5432 (즉시 도착 완료)</span>
                     </div>
                     <div style="display: flex; justify-content: space-between;">
-                        <span style="color: #64748b;">배송 예정일</span>
-                        <span style="font-weight: 700; color: #10b981;">내일 오후 도착 보장</span>
+                        <span style="color: #786b65;">매장 교환 상태</span>
+                        <span style="font-weight: 800; color: #00bfa5;">전국 제휴 매장 즉시 교환 가능 (유효기간 90일)</span>
                     </div>
                 </div>
 
                 <div style="display: flex; gap: 12px;">
-                    <a href="index.html" class="btn btn-outline" style="flex: 1; padding: 14px;">홈으로 가기</a>
-                    <a href="products.html" class="btn btn-primary" style="flex: 1; padding: 14px;">계속 쇼핑하기 →</a>
+                    <a href="index.html" class="btn btn-outline" style="flex: 1; padding: 14px;">Welcome 홈으로</a>
+                    <a href="products.html" class="btn btn-primary" style="flex: 1; padding: 14px;">🎁 다른 트릿 더 선물하기 →</a>
                 </div>
             </div>
         </div>
@@ -58,21 +72,19 @@
 
     <footer class="footer" style="padding: 24px 0; margin-top: 60px;">
         <div class="container" style="text-align: center; font-size: 0.82rem;">
-            &copy; 2026 MyShop Co., Ltd. All rights reserved.
+            &copy; 2026 Share Treats Innovation Corp. &amp; MyShop. All rights reserved.
         </div>
     </footer>
 
     <script src="js/app.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Clear cart upon successful order
             localStorage.removeItem("shop_cart");
             updateCartBadge();
-            // Random order number
-            const rand = Math.floor(1000 + Math.random() * 9000);
-            document.getElementById("order-number").innerText = `ORD-20261109-${rand}`;
+            const rand1 = Math.floor(1000 + Math.random() * 9000);
+            const rand2 = Math.floor(1000 + Math.random() * 9000);
+            document.getElementById("order-number").innerText = `ST-${rand1}-${rand2}`;
         });
     </script>
 </body>
 </html>
-

@@ -3,18 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상품 상세정보 - MyShop</title>
+    <title>트릿 선물하기 상세 - Share Treats</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Build Version Bar -->
+    <div class="build-version-bar">
+        <div class="container">
+            <span>Share Treats Web UI · <strong class="build-version-badge js-build-version">Build v0.01</strong></span>
+            <span>Design Theme: sharetreats.ph/welcome</span>
+        </div>
+    </div>
+
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container">
-            <span>🎉 첫 회원가입 시 10,000원 웰컴 쿠폰팩 즉시 지급!</span>
+            <div class="top-bar-highlight">
+                <span class="top-pill">INSTANT GIFTICON</span>
+                <span>⚡ 스티커 카드와 휴대폰 번호를 입력하면 결제 즉시 SMS 트릿 코드가 발송됩니다!</span>
+            </div>
             <div class="top-bar-links">
                 <a href="login.html">로그인</a>
                 <a href="login.html?tab=signup">회원가입</a>
-                <a href="#">고객센터</a>
             </div>
         </div>
     </div>
@@ -23,22 +33,26 @@
     <header class="header">
         <div class="container header-main">
             <a href="index.html" class="logo">
-                <span>🛍️</span> MyShop
+                <span class="logo-icon-box">🎁</span>
+                <div>
+                    ShareTreats
+                    <span class="logo-sub">SEND TREAT</span>
+                </div>
             </a>
 
             <div class="search-bar">
                 <span class="search-icon">🔍</span>
-                <input type="text" placeholder="상품 검색...">
+                <input type="text" placeholder="브랜드나 트릿 검색..." onkeydown="if(event.key==='Enter') location.href='products.html'">
             </div>
 
             <div class="nav-actions">
                 <a href="login.html" class="nav-btn">
                     <span style="font-size: 1.3rem;">👤</span>
-                    <span>마이페이지</span>
+                    <span>마이 트릿</span>
                 </a>
                 <a href="cart.html" class="nav-btn">
-                    <span style="font-size: 1.3rem;">🛒</span>
-                    <span>장바구니</span>
+                    <span style="font-size: 1.3rem;">🛍️</span>
+                    <span>선물함 (Bag)</span>
                     <span class="badge-count">0</span>
                 </a>
             </div>
@@ -47,11 +61,11 @@
         <nav class="gnb-menu">
             <div class="container">
                 <ul>
-                    <li><a href="index.html">홈</a></li>
-                    <li><a href="products.html">전체상품</a></li>
-                    <li><a href="products.html?filter=best">베스트 랭킹</a></li>
-                    <li><a href="products.html?filter=new">신상품</a></li>
-                    <li><a href="cart.html">장바구니</a></li>
+                    <li><a href="index.html">Welcome (홈)</a></li>
+                    <li><a href="index.html#innovations">Innovations</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="products.html" class="active">Brands &amp; Treats</a></li>
+                    <li><a href="cart.html">Treats Bag</a></li>
                 </ul>
             </div>
         </nav>
@@ -61,59 +75,69 @@
     <main class="main-wrapper">
         <div class="container">
             <!-- Breadcrumbs -->
-            <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 24px;">
-                <a href="index.html">홈</a> &gt; <a href="products.html">전체상품</a> &gt; <span id="detail-category" style="color: #1e293b; font-weight: 600;">CATEGORY</span>
+            <div style="font-size: 0.85rem; color: #786b65; margin-bottom: 24px;">
+                <a href="index.html">Welcome</a> &gt; <a href="products.html">Brands &amp; Treats</a> &gt; <span id="detail-category" style="color: #ff5722; font-weight: 800;">BRAND</span>
             </div>
 
             <!-- Detail Grid Layout -->
             <div class="detail-grid">
-                <!-- Gallery Section -->
+                <!-- Gallery & Sticker Preview Section -->
                 <div class="detail-gallery">
-                    <div class="main-preview-img" id="detail-icon">
-                        📦
+                    <div class="main-preview-img">
+                        <div id="detail-icon">🎁</div>
+                        <span style="font-size: 0.82rem; font-weight: 800; background: white; color: #ff5722; padding: 6px 14px; border-radius: 999px; margin-top: 12px; box-shadow: var(--shadow-sm);">
+                            ⚡ 전국 매장 즉시 교환 가능 e-Voucher
+                        </span>
                     </div>
                     <div class="gallery-thumbs">
-                        <button class="thumb-btn active">🌟</button>
-                        <button class="thumb-btn">📸</button>
-                        <button class="thumb-btn">🔍</button>
+                        <button class="thumb-btn active" title="기본 트릿 뷰">🎁</button>
+                        <button class="thumb-btn" title="생일 스티커 카드">🎂</button>
+                        <button class="thumb-btn" title="감사 스티커 카드">💐</button>
+                        <button class="thumb-btn" title="응원 스티커 카드">🥳</button>
                     </div>
                 </div>
 
-                <!-- Info & Purchase Section -->
+                <!-- Info & Treat Personalization Section -->
                 <div class="detail-info">
-                    <span style="color: #2563eb; font-weight: 700; font-size: 0.88rem; margin-bottom: 6px;">OFFICIAL AUTHENTIC</span>
-                    <h2 class="detail-title" id="detail-title">상품명을 불러오는 중...</h2>
+                    <span style="color: #ff5722; font-weight: 800; font-size: 0.85rem; margin-bottom: 6px;">OFFICIAL PARTNER E-VOUCHER</span>
+                    <h2 class="detail-title" id="detail-title">트릿 정보를 불러오는 중...</h2>
                     
-                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                        <span id="detail-rating" style="color: #eab308; font-weight: 700;">★ 4.9 (120개 리뷰)</span>
-                        <span style="color: #cbd5e1;">|</span>
-                        <span style="color: #10b981; font-weight: 600; font-size: 0.9rem;">재고 보유 (당일출고 가능)</span>
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                        <span id="detail-rating" style="color: #f59e0b; font-weight: 800;">★ 4.9</span>
+                        <span style="color: #f1e4dd;">|</span>
+                        <span style="color: #00bfa5; font-weight: 800; font-size: 0.9rem;">⚡ 결제 즉시 SMS 트릿 코드 발송</span>
                     </div>
 
                     <div class="detail-price-box">
                         <div style="display: flex; align-items: baseline; gap: 10px;">
-                            <span class="discount" id="detail-discount" style="font-size: 1.5rem;">20%</span>
-                            <span class="price" id="detail-price" style="font-size: 1.8rem; color: #1e293b;">0원</span>
+                            <span class="discount" id="detail-discount" style="font-size: 1.5rem;">15%</span>
+                            <span class="price" id="detail-price" style="font-size: 1.85rem; color: #27201c;">0원</span>
                             <span class="original-price" id="detail-original-price" style="font-size: 1rem;">0원</span>
                         </div>
-                        <div style="font-size: 0.85rem; color: #64748b; margin-top: 8px;">
-                            무이자 할부 최대 6개월 지원 | 적립금 최대 5% 적립
+                        <div style="font-size: 0.84rem; color: #786b65; margin-top: 8px;">
+                            💳 신용카드 불필요: 휴대폰 결제(Load), GCash, Maya, GrabPay, 간편결제 완벽 지원
                         </div>
                     </div>
 
-                    <!-- Option Selector -->
+                    <!-- Step-by-Step Personalization Selector -->
                     <div class="detail-options">
                         <div>
-                            <div class="option-label">상품 옵션 선택</div>
+                            <div class="option-label">STEP 1. 스티커 카드 &amp; 인사말 테마 선택</div>
                             <select class="option-select" id="detail-option-select">
-                                <option value="기본 / Free">옵션 1: 기본 (Free Size / Default Color)</option>
-                                <option value="블랙 / M">옵션 2: 매트 블랙 (M)</option>
-                                <option value="화이트 / L">옵션 3: 퓨어 화이트 (L)</option>
+                                <option value="🎂 생일 축하 스티커 카드">🎂 Happy Birthday! 생일 축하 스티커 카드</option>
+                                <option value="💝 고마운 마음 감사 카드">💝 Thank You! 고마운 마음 감사 스티커 카드</option>
+                                <option value="💪 오늘 하루도 화이팅 응원 카드">💪 Cheer Up! 오늘 하루도 화이팅 응원 카드</option>
+                                <option value="🎉 축하합니다 기념일 카드">🎉 Congrats! 특별한 날 기념일 스티커 카드</option>
                             </select>
                         </div>
 
                         <div>
-                            <div class="option-label">구매 수량</div>
+                            <div class="option-label">STEP 2. 수신자 휴대폰 번호 (Recipient Mobile No.)</div>
+                            <input type="tel" class="gift-input" id="recipient-phone" placeholder="예: 010-1234-5678 또는 +63 917-123-4567" value="010-9876-5432">
+                        </div>
+
+                        <div>
+                            <div class="option-label">구매 수량 (Treats 수량)</div>
                             <div class="quantity-control">
                                 <button class="quantity-btn" onclick="changeDetailQty(-1)">-</button>
                                 <input type="text" class="quantity-input" id="detail-qty-input" value="1" readonly>
@@ -124,32 +148,32 @@
 
                     <!-- Action Buttons -->
                     <div style="display: flex; gap: 12px; margin-top: auto;">
-                        <button class="btn btn-outline" style="flex: 1; padding: 16px; font-size: 1.05rem;" onclick="addDetailToCart()">
-                            🛒 장바구니 담기
+                        <button class="btn btn-outline" style="flex: 1; padding: 15px; font-size: 1rem;" onclick="addDetailToCart()">
+                            🛍️ 선물함(Bag) 담기
                         </button>
-                        <button class="btn btn-primary" style="flex: 1.5; padding: 16px; font-size: 1.05rem;" onclick="buyNow()">
-                            ⚡ 바로 구매하기
+                        <button class="btn btn-primary" style="flex: 1.5; padding: 15px; font-size: 1rem;" onclick="buyNow()">
+                            ⚡ 지금 바로 트릿 보내기 →
                         </button>
                     </div>
 
-                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin-top: 24px; font-size: 0.85rem; color: #64748b; line-height: 1.6;">
-                        🚚 <b>배송 안내</b>: 30,000원 이상 구매 시 무료배송 (제주/도서산간 3,000원 추가)<br>
-                        🔄 <b>교환/반품</b>: 수령 후 7일 이내 신청 가능
+                    <div style="background: #fff3ef; border: 1px solid #ffe0d6; border-radius: 12px; padding: 14px 16px; margin-top: 20px; font-size: 0.84rem; color: #574b45; line-height: 1.6;">
+                        📲 <b>즉시 교환 안내</b>: 수신자에게 발송된 10자리 Treat Code를 전국 제휴 매장에 제시하면 즉시 상품으로 교환됩니다.<br>
+                        🔄 <b>유효기간 및 환불</b>: 발행일로부터 90일 이내 전국 매장에서 사용 가능하며 미사용 코드 100% 환불을 보장합니다.
                     </div>
                 </div>
             </div>
 
-            <!-- Description Tabs -->
-            <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 36px;">
-                <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 16px;">상품 상세 정보 및 스펙</h3>
-                <p style="color: #475569; line-height: 1.8; margin-bottom: 24px;">
-                    본 상품은 엄격한 품질 검수를 거쳐 제작된 공식 정품입니다. 일상 속에서 최상의 만족감을 드리기 위해 세심한 디테일까지 고려하여 완성되었습니다.
+            <!-- Description Box -->
+            <div style="background: white; border: 1.5px solid #f1e4dd; border-radius: 16px; padding: 36px;">
+                <h3 style="font-size: 1.3rem; font-weight: 900; margin-bottom: 14px;">트릿 바우처 이용 및 매장 교환 가이드 (How to Redeem)</h3>
+                <p style="color: #574b45; line-height: 1.8; margin-bottom: 24px;">
+                    Share Treats의 모든 모바일 바우처는 공식 제휴 브랜드와 실시간 연동되어 발행됩니다. 실물 카드나 종이 상품권 없이 모바일 SMS 메시지 하나로 전국 매장에서 편리하게 교환하세요.
                 </p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: #f8fafc; padding: 20px; border-radius: 8px; font-size: 0.9rem;">
-                    <div>• <b>소재/재질</b>: 최고급 프리미엄 원자재</div>
-                    <div>• <b>제조국</b>: 대한민국 (Republic of Korea)</div>
-                    <div>• <b>A/S 책임자</b>: MyShop 고객만족센터 (1588-0000)</div>
-                    <div>• <b>품질보증기준</b>: 공정거래위원회 고시 소비자분쟁해결기준 준수</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: #fffaf7; padding: 20px; border-radius: 12px; border: 1px solid #f1e4dd; font-size: 0.9rem;">
+                    <div>• <b>발송 방식</b>: 결제 즉시 SMS 문자 및 이메일 실시간 전송</div>
+                    <div>• <b>교환처</b>: 해당 브랜드 전국 오프라인 매장 (일부 특수매장 제외)</div>
+                    <div>• <b>결제 수단</b>: 휴대폰 소액결제(Load), GCash, Maya, GrabPay, 카드</div>
+                    <div>• <b>고객센터</b>: Share Treats Care (1588-0000 / support@sharetreats.ph)</div>
                 </div>
             </div>
         </div>
@@ -159,8 +183,8 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom" style="border: none; padding-top: 0;">
-                <span>&copy; 2026 MyShop Co., Ltd. All rights reserved.</span>
-                <span>WAS / WAR 배포 아키텍처 호환</span>
+                <span>&copy; 2026 Share Treats Innovation Corp. &amp; MyShop. All rights reserved.</span>
+                <span>Nginx &amp; Tomcat WAS 아키텍처 호환</span>
             </div>
         </div>
     </footer>
@@ -180,4 +204,3 @@
     </script>
 </body>
 </html>
-

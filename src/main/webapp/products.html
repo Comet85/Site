@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>전체 상품 목록 - MyShop</title>
+    <title>Brands &amp; Treats 카탈로그 - Share Treats</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Build Version Bar -->
+    <div class="build-version-bar">
+        <div class="container">
+            <span>Share Treats Web UI · <strong class="build-version-badge js-build-version">Build v0.01</strong></span>
+            <span>Design Theme: sharetreats.ph/welcome</span>
+        </div>
+    </div>
+
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="container">
-            <span>🎉 첫 회원가입 시 10,000원 웰컴 쿠폰팩 즉시 지급!</span>
+            <div class="top-bar-highlight">
+                <span class="top-pill">INSTANT GIFTICON</span>
+                <span>⚡ 신용카드 없이도 휴대폰 번호만으로 즉시 발송되는 모바일 트릿 쿠폰!</span>
+            </div>
             <div class="top-bar-links">
+                <div class="region-switch">
+                    <span class="active">🇵🇭 PH</span>
+                    <span>🇮🇩 ID</span>
+                    <span>🇰🇷 KR</span>
+                </div>
                 <a href="login.html">로그인</a>
                 <a href="login.html?tab=signup">회원가입</a>
-                <a href="#">고객센터</a>
             </div>
         </div>
     </div>
@@ -23,22 +38,26 @@
     <header class="header">
         <div class="container header-main">
             <a href="index.html" class="logo">
-                <span>🛍️</span> MyShop
+                <span class="logo-icon-box">🎁</span>
+                <div>
+                    ShareTreats
+                    <span class="logo-sub">TREATS</span>
+                </div>
             </a>
 
             <div class="search-bar">
                 <span class="search-icon">🔍</span>
-                <input type="text" id="product-search-input" placeholder="상품명 또는 카테고리를 검색하세요..." onkeyup="filterProducts()">
+                <input type="text" id="product-search-input" placeholder="브랜드명(Jollibee, Starbucks 등) 또는 상품명을 검색하세요..." onkeyup="filterProducts()">
             </div>
 
             <div class="nav-actions">
                 <a href="login.html" class="nav-btn">
                     <span style="font-size: 1.3rem;">👤</span>
-                    <span>마이페이지</span>
+                    <span>마이 트릿</span>
                 </a>
                 <a href="cart.html" class="nav-btn">
-                    <span style="font-size: 1.3rem;">🛒</span>
-                    <span>장바구니</span>
+                    <span style="font-size: 1.3rem;">🛍️</span>
+                    <span>선물함 (Bag)</span>
                     <span class="badge-count">0</span>
                 </a>
             </div>
@@ -47,13 +66,18 @@
         <nav class="gnb-menu">
             <div class="container">
                 <ul>
-                    <li><a href="index.html">홈</a></li>
-                    <li><a href="products.html" class="active">전체상품</a></li>
-                    <li><a href="products.html?filter=best">베스트 랭킹</a></li>
-                    <li><a href="products.html?filter=new">신상품</a></li>
-                    <li><a href="products.html?filter=sale">타임특가</a></li>
-                    <li><a href="cart.html">장바구니</a></li>
+                    <li><a href="index.html">Welcome (홈)</a></li>
+                    <li><a href="index.html#innovations">Innovations (핵심특징)</a></li>
+                    <li><a href="index.html#how-it-works">How It Works (이용방법)</a></li>
+                    <li><a href="products.html" class="active">Brands &amp; Treats (전체 기프티콘)</a></li>
+                    <li><a href="index.html#corporate">For Corporate (기업전용)</a></li>
+                    <li><a href="cart.html">Treats Bag (선물함)</a></li>
                 </ul>
+                <div class="gnb-wallet-badges">
+                    <span class="wallet-pill gcash">GCash / GLife</span>
+                    <span class="wallet-pill maya">Maya</span>
+                    <span class="wallet-pill">Load / 간편결제</span>
+                </div>
             </div>
         </nav>
     </header>
@@ -62,44 +86,45 @@
     <main class="main-wrapper">
         <div class="container">
             <!-- Breadcrumbs -->
-            <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 24px;">
-                <a href="index.html">홈</a> &gt; <span style="color: #1e293b; font-weight: 600;">전체 상품 목록</span>
+            <div style="font-size: 0.85rem; color: #786b65; margin-bottom: 24px;">
+                <a href="index.html">Welcome</a> &gt; <span style="color: #27201c; font-weight: 800;">Brands &amp; Treats 전체 카탈로그</span>
             </div>
 
             <div class="layout-split">
                 <!-- Sidebar Filter -->
                 <aside class="filter-sidebar">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-                        <h4 style="font-size: 1.1rem; font-weight: 800;">필터 검색</h4>
-                        <button style="background: none; border: none; color: #2563eb; font-size: 0.8rem; font-weight: 600; cursor: pointer;" onclick="resetFilters()">초기화</button>
+                        <h4 style="font-size: 1.1rem; font-weight: 900;">트릿 필터</h4>
+                        <button style="background: none; border: none; color: #ff5722; font-size: 0.82rem; font-weight: 800; cursor: pointer;" onclick="resetFilters()">초기화</button>
                     </div>
 
                     <div class="filter-group">
-                        <div class="filter-title">카테고리</div>
+                        <div class="filter-title">트릿 카테고리</div>
                         <ul class="filter-list">
-                            <li><label><input type="radio" name="cat" value="all" checked onchange="filterProducts()"> 전체 보기</label></li>
-                            <li><label><input type="radio" name="cat" value="fashion" onchange="filterProducts()"> 패션의류 (Fashion)</label></li>
-                            <li><label><input type="radio" name="cat" value="electronics" onchange="filterProducts()"> 디지털/가전 (Tech)</label></li>
-                            <li><label><input type="radio" name="cat" value="beauty" onchange="filterProducts()"> 뷰티/케어 (Beauty)</label></li>
-                            <li><label><input type="radio" name="cat" value="living" onchange="filterProducts()"> 가구/인테리어 (Living)</label></li>
+                            <li><label><input type="radio" name="cat" value="all" checked onchange="filterProducts()"> 전체 트릿 보기</label></li>
+                            <li><label><input type="radio" name="cat" value="food" onchange="filterProducts()"> 패스트푸드/다이닝 (Food)</label></li>
+                            <li><label><input type="radio" name="cat" value="cafe" onchange="filterProducts()"> 카페/베이커리 (Cafe)</label></li>
+                            <li><label><input type="radio" name="cat" value="retail" onchange="filterProducts()"> 편의점/리테일 (Retail)</label></li>
+                            <li><label><input type="radio" name="cat" value="entertainment" onchange="filterProducts()"> 영화/엔터테인먼트 (Cinema)</label></li>
+                            <li><label><input type="radio" name="cat" value="lifestyle" onchange="filterProducts()"> 스파/웰니스 (Lifestyle)</label></li>
                         </ul>
                     </div>
 
                     <div class="filter-group">
-                        <div class="filter-title">가격대</div>
+                        <div class="filter-title">가격대 (KRW 기준)</div>
                         <ul class="filter-list">
-                            <li><label><input type="radio" name="price" value="all" checked onchange="filterProducts()"> 전체 가격</label></li>
-                            <li><label><input type="radio" name="price" value="under5" onchange="filterProducts()"> 5만원 미만</label></li>
-                            <li><label><input type="radio" name="price" value="5to10" onchange="filterProducts()"> 5만원 ~ 10만원</label></li>
-                            <li><label><input type="radio" name="price" value="over10" onchange="filterProducts()"> 10만원 이상</label></li>
+                            <li><label><input type="radio" name="price" value="all" checked onchange="filterProducts()"> 전체 가격대</label></li>
+                            <li><label><input type="radio" name="price" value="under1" onchange="filterProducts()"> 1만원 이하 가벼운 트릿</label></li>
+                            <li><label><input type="radio" name="price" value="1to3" onchange="filterProducts()"> 1만원 ~ 3만원 실속 트릿</label></li>
+                            <li><label><input type="radio" name="price" value="over3" onchange="filterProducts()"> 3만원 이상 프리미엄</label></li>
                         </ul>
                     </div>
 
                     <div class="filter-group">
-                        <div class="filter-title">배송 혜택</div>
+                        <div class="filter-title">발송 및 결제 옵션</div>
                         <ul class="filter-list">
-                            <li><label><input type="checkbox"> 무료배송</label></li>
-                            <li><label><input type="checkbox"> 당일출발 (빠른배송)</label></li>
+                            <li><label><input type="checkbox" checked disabled> ⚡ 실시간 SMS 코드 발송</label></li>
+                            <li><label><input type="checkbox" checked disabled> 🎨 커스텀 스티커 카드 무료</label></li>
                         </ul>
                     </div>
                 </aside>
@@ -107,12 +132,12 @@
                 <!-- Products Grid Area -->
                 <div>
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                        <span style="font-size: 0.95rem; color: #475569;">총 <b id="product-count" style="color: #2563eb;">8</b>개의 상품</span>
-                        <select style="padding: 8px 12px; border: 1.5px solid #cbd5e1; border-radius: 6px; outline: none; font-size: 0.9rem;" onchange="sortProducts(this.value)">
-                            <option value="recommend">추천순</option>
-                            <option value="lowPrice">낮은 가격순</option>
-                            <option value="highPrice">높은 가격순</option>
-                            <option value="rating">평점 높은순</option>
+                        <span style="font-size: 0.95rem; color: #574b45;">총 <b id="product-count" style="color: #ff5722;">8</b>개의 모바일 트릿 바우처</span>
+                        <select style="padding: 8px 14px; border: 1.5px solid #f1e4dd; border-radius: 999px; outline: none; font-size: 0.88rem; font-weight: 700;" onchange="sortProducts(this.value)">
+                            <option value="recommend">인기 트릿 추천순</option>
+                            <option value="lowPrice">낮은 금액순</option>
+                            <option value="highPrice">높은 금액순</option>
+                            <option value="rating">만족도 높은순</option>
                         </select>
                     </div>
 
@@ -128,8 +153,8 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom" style="border: none; padding-top: 0;">
-                <span>&copy; 2026 MyShop Co., Ltd. All rights reserved.</span>
-                <span>WAS / WAR 배포 아키텍처 호환</span>
+                <span>&copy; 2026 Share Treats Innovation Corp. &amp; MyShop. All rights reserved.</span>
+                <span>Nginx &amp; Tomcat WAS 아키텍처 호환</span>
             </div>
         </div>
     </footer>
@@ -149,12 +174,12 @@
             const selectedPrice = document.querySelector('input[name="price"]:checked').value;
 
             let filtered = PRODUCTS_DATA.filter(p => {
-                const matchQuery = p.name.toLowerCase().includes(query) || p.category.toLowerCase().includes(query);
+                const matchQuery = p.name.toLowerCase().includes(query) || p.category.toLowerCase().includes(query) || (p.brand && p.brand.toLowerCase().includes(query));
                 const matchCat = selectedCat === "all" || p.category === selectedCat;
                 let matchPrice = true;
-                if (selectedPrice === "under5") matchPrice = p.price < 50000;
-                else if (selectedPrice === "5to10") matchPrice = p.price >= 50000 && p.price <= 100000;
-                else if (selectedPrice === "over10") matchPrice = p.price > 100000;
+                if (selectedPrice === "under1") matchPrice = p.price <= 10000;
+                else if (selectedPrice === "1to3") matchPrice = p.price > 10000 && p.price <= 30000;
+                else if (selectedPrice === "over3") matchPrice = p.price > 30000;
 
                 return matchQuery && matchCat && matchPrice;
             });
@@ -180,7 +205,6 @@
         }
 
         document.addEventListener("DOMContentLoaded", () => {
-            // Check url params for category
             const urlParams = new URLSearchParams(window.location.search);
             const cat = urlParams.get("cat");
             if (cat) {
@@ -192,4 +216,3 @@
     </script>
 </body>
 </html>
-

@@ -3,18 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyShop - 트렌디 쇼핑의 시작</title>
+    <title>Share Treats - Share Casual Treats Instantly! (Welcome)</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Top Bar -->
+    <!-- Build Version Bar -->
+    <div class="build-version-bar">
+        <div class="container">
+            <span>Share Treats Web UI · <strong class="build-version-badge js-build-version">Build v0.01</strong></span>
+            <span>Design Theme: sharetreats.ph/welcome</span>
+        </div>
+    </div>
+
+    <!-- Top Bar (Share Treats Announcement & Region Selector) -->
     <div class="top-bar">
         <div class="container">
-            <span>🎉 첫 회원가입 시 10,000원 웰컴 쿠폰팩 즉시 지급!</span>
+            <div class="top-bar-highlight">
+                <span class="top-pill">INSTANT GIFTICON</span>
+                <span>⚡ 신용카드 없이도 휴대폰 번호만으로 즉시 발송되는 모바일 트릿 쿠폰!</span>
+            </div>
             <div class="top-bar-links">
+                <div class="region-switch" title="Select Region">
+                    <span class="active">🇵🇭 PH</span>
+                    <span>🇮🇩 ID</span>
+                    <span>🇰🇷 KR</span>
+                </div>
                 <a href="login.html">로그인</a>
                 <a href="login.html?tab=signup">회원가입</a>
-                <a href="#">고객센터</a>
+                <a href="#corporate">기업 대량발송 (B2B)</a>
             </div>
         </div>
     </div>
@@ -23,38 +39,47 @@
     <header class="header">
         <div class="container header-main">
             <a href="index.html" class="logo">
-                <span>🛍️</span> MyShop
+                <span class="logo-icon-box">🎁</span>
+                <div>
+                    ShareTreats
+                    <span class="logo-sub">WELCOME</span>
+                </div>
             </a>
 
             <div class="search-bar">
                 <span class="search-icon">🔍</span>
-                <input type="text" placeholder="원하시는 상품이나 브랜드를 검색해 보세요...">
+                <input type="text" placeholder="Jollibee, Starbucks, 7-Eleven 등 브랜드나 트릿을 검색하세요..." onkeydown="if(event.key==='Enter') location.href='products.html'">
             </div>
 
             <div class="nav-actions">
                 <a href="login.html" class="nav-btn">
                     <span style="font-size: 1.3rem;">👤</span>
-                    <span>마이페이지</span>
+                    <span>마이 트릿</span>
                 </a>
                 <a href="cart.html" class="nav-btn">
-                    <span style="font-size: 1.3rem;">🛒</span>
-                    <span>장바구니</span>
+                    <span style="font-size: 1.3rem;">🛍️</span>
+                    <span>선물함 (Bag)</span>
                     <span class="badge-count">0</span>
                 </a>
             </div>
         </div>
 
-        <!-- GNB Navigation -->
+        <!-- GNB Navigation (Share Treats Welcome Page Structure) -->
         <nav class="gnb-menu">
             <div class="container">
                 <ul>
-                    <li><a href="index.html" class="active">홈</a></li>
-                    <li><a href="products.html">전체상품</a></li>
-                    <li><a href="products.html?filter=best">베스트 랭킹</a></li>
-                    <li><a href="products.html?filter=new">신상품</a></li>
-                    <li><a href="products.html?filter=sale">타임특가</a></li>
-                    <li><a href="cart.html">장바구니</a></li>
+                    <li><a href="index.html" class="active">Welcome (홈)</a></li>
+                    <li><a href="#innovations">Innovations (핵심특징)</a></li>
+                    <li><a href="#how-it-works">How It Works (이용방법)</a></li>
+                    <li><a href="products.html">Brands &amp; Treats (전체 기프티콘)</a></li>
+                    <li><a href="#corporate">For Corporate (기업전용)</a></li>
+                    <li><a href="cart.html">Treats Bag (선물함)</a></li>
                 </ul>
+                <div class="gnb-wallet-badges">
+                    <span class="wallet-pill gcash">GCash / GLife</span>
+                    <span class="wallet-pill maya">Maya</span>
+                    <span class="wallet-pill">Load / 간편결제</span>
+                </div>
             </div>
         </nav>
     </header>
@@ -62,75 +87,212 @@
     <!-- Main Content -->
     <main class="main-wrapper">
         <div class="container">
-            <!-- Hero Banner -->
+            <!-- Hero Banner (Share Treats Welcome Style) -->
             <section class="hero-banner">
                 <div class="hero-content">
-                    <span class="hero-tag">🔥 2026 WINTER SEASON OFF</span>
-                    <h2 class="hero-title">올겨울 마지막 찬스,<br>최대 70% 시즌오프 세일</h2>
-                    <p class="hero-desc">엄선된 프리미엄 패션과 감성 리빙 아이템을 특별한 혜택가로 만나보세요.</p>
-                    <div style="display: flex; gap: 12px;">
-                        <a href="products.html" class="btn btn-white">지금 쇼핑하기 →</a>
-                        <a href="products.html?filter=best" class="btn btn-outline" style="border-color: white; color: white;">베스트 아이템</a>
+                    <span class="hero-tag">🎉 CASUAL DIGITAL GIFTING PLATFORM</span>
+                    <h1 class="hero-title">Share Casual Treats<br>소중한 사람에게 지금 바로<br>달콤한 트릿을 선물하세요!</h1>
+                    <p class="hero-desc">
+                        복잡한 주소 입력이나 신용카드 없이도 상대방의 휴대폰 번호만 알면 끝!
+                        감성 스티커 카드와 함께 패스트푸드, 카페, 편의점, 영화관 e-바우처 코드를 실시간 SMS로 전송해 보세요.
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                        <a href="products.html" class="btn btn-white">🎁 지금 트릿 선물하기 →</a>
+                        <a href="#how-it-works" class="btn btn-outline" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.5); color: white;">📖 4단계 이용방법 보기</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat-item">
+                            <strong>100+ Brands</strong>
+                            <span>전국 제휴 프랜차이즈</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <strong>Instant SMS</strong>
+                            <span>결제 즉시 코드 발송</span>
+                        </div>
+                        <div class="hero-stat-item">
+                            <strong>No Card Needed</strong>
+                            <span>휴대폰·e월렛 간편결제</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Mobile Gifticon Mockup -->
+                <div class="hero-mockup">
+                    <div class="mockup-sticker-header">
+                        <span>💌 Birthday Sticker Card</span>
+                        <span>To: +63 917-XXX-XXXX</span>
+                    </div>
+                    <p style="font-size: 0.88rem; color: #574b45; margin-bottom: 12px; font-weight: 600;">
+                        생일 축하해! 오늘 하루 맛있는 치킨과 함께 행복한 시간 보내길 바랄게 🥳
+                    </p>
+                    <div class="mockup-treat-body">
+                        <div class="mockup-treat-icon">🍗</div>
+                        <div>
+                            <span style="font-size: 0.72rem; font-weight: 800; color: #ff5722;">JOLLIBEE · POPULAR TREAT</span>
+                            <h4 style="font-size: 1rem; font-weight: 900; margin: 2px 0;">치킨조이 1인 버킷 &amp; 스파게티</h4>
+                            <span style="font-size: 0.8rem; color: #786b65;">전국 매장 즉시 교환 가능</span>
+                        </div>
+                    </div>
+                    <div class="mockup-code-bar">
+                        <span>TREAT CODE: <strong>ST-9482-7710</strong></span>
+                        <span class="mockup-sms-badge">SMS 전송완료</span>
                     </div>
                 </div>
             </section>
 
-            <!-- Category Grid -->
+            <!-- Section 1: Innovations (Why Share Treats?) -->
+            <section id="innovations">
+                <div class="section-title-wrap">
+                    <div>
+                        <span class="section-eyebrow">INNOVATIONS</span>
+                        <h2 class="section-title">일상을 바꾸는 디지털 기프팅 혁신</h2>
+                        <p class="section-sub">Share Treats가 제공하는 빠르고 간편한 모바일 e-바우처 핵심 서비스입니다.</p>
+                    </div>
+                </div>
+
+                <div class="innovations-grid">
+                    <div class="innovation-card">
+                        <div class="innovation-icon">🍔</div>
+                        <h3 class="innovation-title">Lifestyle Treats</h3>
+                        <p class="innovation-desc">
+                            패스트푸드, 스페셜티 커피, 편의점 금액권, 영화 관람권, 스파 테라피까지 일상의 모든 순간에 어울리는 라이프스타일 트릿을 제공합니다.
+                        </p>
+                    </div>
+                    <div class="innovation-card">
+                        <div class="innovation-icon">⚡</div>
+                        <h3 class="innovation-title">Instant Treat Codes</h3>
+                        <p class="innovation-desc">
+                            결제가 완료되는 즉시 고유한 트릿 코드(Treat Code)가 생성되어 수신자의 휴대폰 SMS 문자와 이메일로 실시간 발송됩니다.
+                        </p>
+                    </div>
+                    <div class="innovation-card">
+                        <div class="innovation-icon">🏪</div>
+                        <h3 class="innovation-title">Nationwide Redemption</h3>
+                        <p class="innovation-desc">
+                            복잡한 출력 절차 없이 휴대폰으로 전달받은 트릿 코드를 전국 제휴 브랜드 매장에 제시하면 현장에서 즉시 실물 상품으로 교환됩니다.
+                        </p>
+                    </div>
+                    <div class="innovation-card">
+                        <div class="innovation-icon">📱</div>
+                        <h3 class="innovation-title">No Credit Card Required</h3>
+                        <p class="innovation-desc">
+                            신용카드가 없어도 휴대폰 소액결제(Airtime Load), GCash(GLife), Maya, GrabPay, 카카오페이 등 다양한 디지털 결제 수단을 지원합니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: How It Works (4-Step Flow) -->
+            <section id="how-it-works" class="how-it-works-section">
+                <div style="text-align: center; max-width: 640px; margin: 0 auto;">
+                    <span class="section-eyebrow">HOW IT WORKS</span>
+                    <h2 class="section-title">단 4단계로 완성되는 간편 트릿 선물</h2>
+                    <p class="section-sub">누구나 30초 안에 마음을 담은 스티커 카드와 모바일 쿠폰을 보낼 수 있습니다.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <span class="step-number">STEP 01</span>
+                        <div class="step-emoji">🎨</div>
+                        <h3 class="step-title">Select Treats &amp; Stickers</h3>
+                        <p class="step-desc">선물하고 싶은 트릿 상품을 고르고 생일·감사·응원 테마의 디지털 스티커 카드와 인사말을 선택합니다.</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">STEP 02</span>
+                        <div class="step-emoji">📲</div>
+                        <h3 class="step-title">Enter Mobile Number</h3>
+                        <p class="step-desc">선물을 받을 친구, 가족, 동료의 휴대폰 번호를 입력합니다. 배송지 주소를 물어볼 필요가 없습니다.</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">STEP 03</span>
+                        <div class="step-emoji">💳</div>
+                        <h3 class="step-title">Pay via Load or Wallet</h3>
+                        <p class="step-desc">휴대폰 결제(Load), GCash, Maya, GrabPay, 또는 신용/체크카드 중 원하는 결제 수단으로 간편하게 결제합니다.</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">STEP 04</span>
+                        <div class="step-emoji">🎉</div>
+                        <h3 class="step-title">Redeem Treat Code</h3>
+                        <p class="step-desc">수신자가 SMS로 도착한 트릿 코드를 제휴 매장 카운터에 제시하고 맛있는 트릿을 즉시 수령합니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Brands & Categories -->
+            <section id="brands">
+                <div class="section-title-wrap">
+                    <div>
+                        <span class="section-eyebrow">PARTNER BRANDS &amp; CATEGORIES</span>
+                        <h2 class="section-title">카테고리 및 인기 제휴 브랜드</h2>
+                        <p class="section-sub">원하시는 트릿 카테고리와 대표 프랜차이즈 브랜드를 선택해 보세요.</p>
+                    </div>
+                </div>
+
+                <div class="categories-grid">
+                    <a href="products.html?cat=food" class="category-item">
+                        <div class="category-icon">🍗</div>
+                        <div class="category-name">패스트푸드/다이닝</div>
+                    </a>
+                    <a href="products.html?cat=cafe" class="category-item">
+                        <div class="category-icon">☕</div>
+                        <div class="category-name">카페/베이커리</div>
+                    </a>
+                    <a href="products.html?cat=retail" class="category-item">
+                        <div class="category-icon">🏪</div>
+                        <div class="category-name">편의점/리테일</div>
+                    </a>
+                    <a href="products.html?cat=entertainment" class="category-item">
+                        <div class="category-icon">🎬</div>
+                        <div class="category-name">영화/엔터테인먼트</div>
+                    </a>
+                    <a href="products.html?cat=lifestyle" class="category-item">
+                        <div class="category-icon">💆‍♀️</div>
+                        <div class="category-name">스파/뷰티/케어</div>
+                    </a>
+                    <a href="products.html" class="category-item">
+                        <div class="category-icon">🎁</div>
+                        <div class="category-name">전체 트릿 보기</div>
+                    </a>
+                </div>
+
+                <div class="brands-strip">
+                    <a href="products.html?cat=food" class="brand-pill">🐝 Jollibee</a>
+                    <a href="products.html?cat=food" class="brand-pill">🍟 McDonald's</a>
+                    <a href="products.html?cat=food" class="brand-pill">🍗 KFC</a>
+                    <a href="products.html?cat=cafe" class="brand-pill">☕ Starbucks</a>
+                    <a href="products.html?cat=retail" class="brand-pill">🏪 7-Eleven CLiQQ</a>
+                    <a href="products.html?cat=cafe" class="brand-pill">🍩 Dunkin'</a>
+                    <a href="products.html?cat=food" class="brand-pill">🥡 Chowking</a>
+                    <a href="products.html?cat=food" class="brand-pill">🍕 Greenwich</a>
+                    <a href="products.html?cat=entertainment" class="brand-pill">🎟️ SM / CGV Cinema</a>
+                    <a href="products.html?cat=lifestyle" class="brand-pill">🌿 Wellness Spa</a>
+                </div>
+            </section>
+
+            <!-- Section 4: Best Selling Treats -->
             <div class="section-title-wrap">
                 <div>
-                    <h3 class="section-title">카테고리별 쇼핑</h3>
-                    <p class="section-sub">원하시는 카테고리를 선택하고 취향에 맞는 상품을 찾아보세요.</p>
+                    <span class="section-eyebrow">BEST SELLING TREATS</span>
+                    <h2 class="section-title">지금 가장 많이 선물하는 인기 트릿 🏆</h2>
+                    <p class="section-sub">결제 즉시 SMS 코드로 발송되는 베스트셀러 모바일 바우처입니다.</p>
                 </div>
-            </div>
-
-            <div class="categories-grid">
-                <a href="products.html?cat=fashion" class="category-item">
-                    <div class="category-icon">👗</div>
-                    <div class="category-name">패션의류</div>
-                </a>
-                <a href="products.html?cat=electronics" class="category-item">
-                    <div class="category-icon">📱</div>
-                    <div class="category-name">디지털/가전</div>
-                </a>
-                <a href="products.html?cat=beauty" class="category-item">
-                    <div class="category-icon">💄</div>
-                    <div class="category-name">뷰티/케어</div>
-                </a>
-                <a href="products.html?cat=living" class="category-item">
-                    <div class="category-icon">🛋️</div>
-                    <div class="category-name">가구/인테리어</div>
-                </a>
-                <a href="products.html?cat=sports" class="category-item">
-                    <div class="category-icon">⚽</div>
-                    <div class="category-name">스포츠/레저</div>
-                </a>
-                <a href="products.html?cat=food" class="category-item">
-                    <div class="category-icon">🥗</div>
-                    <div class="category-name">식품/헬스</div>
-                </a>
-            </div>
-
-            <!-- Best Items Section -->
-            <div class="section-title-wrap">
-                <div>
-                    <h3 class="section-title">실시간 베스트 상품 🏆</h3>
-                    <p class="section-sub">오늘 고객님들이 가장 많이 찾은 인기 상품 목록입니다.</p>
-                </div>
-                <a href="products.html" class="see-all-link">전체보기 →</a>
+                <a href="products.html" class="see-all-link">전체 트릿 카탈로그 보기 →</a>
             </div>
 
             <div class="product-grid" id="main-product-grid">
                 <!-- Dynamically loaded via app.js -->
             </div>
 
-            <!-- Promo Banner -->
-            <section style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: var(--radius-lg); padding: 40px; margin-bottom: 48px; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <span style="color: #2563eb; font-weight: 700; font-size: 0.9rem;">MEMBERSHIP BENEFIT</span>
-                    <h3 style="font-size: 1.6rem; font-weight: 800; margin: 8px 0;">MyShop 멤버십 회원은 전 상품 무료배송</h3>
-                    <p style="color: #64748b;">매월 증정되는 20% 추가 할인 쿠폰과 무료 반품 혜택까지 누려보세요.</p>
+            <!-- Section 5: Corporate Promo Banner -->
+            <section id="corporate" style="background: linear-gradient(135deg, #27201c 0%, #43322b 100%); color: white; border-radius: var(--radius-lg); padding: 44px; margin-bottom: 32px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; box-shadow: var(--shadow-md);">
+                <div style="max-width: 640px;">
+                    <span style="background: var(--secondary); color: #1f1917; font-weight: 900; font-size: 0.78rem; padding: 4px 12px; border-radius: 999px;">SHARE TREATS FOR CORPORATE</span>
+                    <h3 style="font-size: 1.7rem; font-weight: 900; margin: 12px 0 8px;">기업 임직원 복지 및 마케팅 경품 대량 발송 솔루션</h3>
+                    <p style="color: #d6c7c0; font-size: 0.95rem;">
+                        수천 명의 고객과 임직원에게 엑셀 업로드 한 번으로 모바일 기프티콘을 즉시 발송하세요. 기업 전용 할인 혜택과 맞춤형 브랜드 배너를 지원합니다.
+                    </p>
                 </div>
-                <a href="login.html?tab=signup" class="btn btn-primary">멤버십 무료 체험하기</a>
+                <a href="login.html?tab=signup" class="btn btn-primary" style="padding: 15px 30px; font-size: 1rem;">🏢 기업 파트너십 신청하기 →</a>
             </section>
         </div>
     </main>
@@ -140,43 +302,42 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <div class="footer-logo">🛍️ MyShop</div>
+                    <div class="footer-logo">🎁 ShareTreats</div>
                     <p class="footer-desc">
-                        트렌디한 쇼핑 경험을 전달하는 온라인 라이프스타일 스토어입니다. 
-                        고객님의 일상을 더욱 풍요롭게 만들어 드립니다.
+                        Share Treats는 휴대폰 번호만으로 일상 속 감동을 즉시 전하는 글로벌 캐주얼 디지털 기프팅(Gifticon) 플랫폼입니다.
                     </p>
                 </div>
                 <div>
-                    <h4 class="footer-title">쇼핑 가이드</h4>
+                    <h4 class="footer-title">서비스 바로가기</h4>
                     <ul class="footer-links">
-                        <li><a href="products.html">전체 상품</a></li>
-                        <li><a href="cart.html">장바구니</a></li>
-                        <li><a href="login.html">주문 배송조회</a></li>
-                        <li><a href="#">FAQ 자주 묻는 질문</a></li>
+                        <li><a href="index.html">Welcome 홈</a></li>
+                        <li><a href="#innovations">Innovations</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="products.html">Brands &amp; Treats</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="footer-title">고객 서비스</h4>
+                    <h4 class="footer-title">고객 지원 및 제휴</h4>
                     <ul class="footer-links">
-                        <li><a href="#">1:1 문의상담</a></li>
-                        <li><a href="#">공지사항</a></li>
-                        <li><a href="#">입점 제휴 문의</a></li>
-                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#corporate">For Corporate (기업 대량발송)</a></li>
+                        <li><a href="#">가맹점 입점 문의</a></li>
+                        <li><a href="#">트릿 코드 재발송 안내</a></li>
+                        <li><a href="#">이용약관 및 개인정보처리방침</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="footer-title">고객센터 안내</h4>
-                    <p style="font-size: 1.4rem; font-weight: 800; color: white; margin-bottom: 6px;">1588-0000</p>
-                    <p style="font-size: 0.85rem; line-height: 1.5;">
-                        평일 09:00 ~ 18:00 (점심시간 12:00 ~ 13:00)<br>
-                        주말 및 공휴일 휴무
+                    <h4 class="footer-title">Customer Care Center</h4>
+                    <p style="font-size: 1.35rem; font-weight: 900; color: var(--secondary); margin-bottom: 6px;">support@sharetreats.ph</p>
+                    <p style="font-size: 0.85rem; line-height: 1.6;">
+                        고객센터: 1588-0000 / +63 2-8888-0000<br>
+                        운영시간: 평일 09:00 ~ 18:00 (모바일 코드 24시간 연중무휴 발송)
                     </p>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <span>&copy; 2026 MyShop Co., Ltd. All rights reserved. (Apache License 2.0)</span>
-                <span>WAS / WAR 배포 아키텍처 지원 (Nginx &amp; Tomcat 호환)</span>
+                <span>&copy; 2026 Share Treats Innovation Corp. &amp; MyShop. All rights reserved. (Apache License 2.0)</span>
+                <span>Nginx 정적 서빙 &amp; Tomcat WAS (WAR) 하이브리드 배포 호환</span>
             </div>
         </div>
     </footer>
@@ -184,8 +345,7 @@
     <script src="js/app.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Render first 4 best products on main
-            renderProductCards(PRODUCTS_DATA.slice(0, 4), "main-product-grid");
+            renderProductCards(PRODUCTS_DATA.slice(0, 8), "main-product-grid");
         });
     </script>
 </body>
