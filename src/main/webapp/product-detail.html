@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>트릿 선물하기 상세 - Share Treats</title>
+    <title>오브제 상세 스펙 — AURA SELECT</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Build Version Bar -->
+    <!-- Build Version Bar (v0.02) -->
     <div class="build-version-bar">
         <div class="container">
-            <span>Share Treats Web UI · <strong class="build-version-badge js-build-version">Build v0.01</strong></span>
-            <span>Design Theme: sharetreats.ph/welcome</span>
+            <span>AURA SELECT Web UI · <strong class="build-version-badge js-build-version">Build v0.02</strong></span>
+            <span>Architecture: Editorial Nordic &amp; Tech Select Store</span>
         </div>
     </div>
 
-    <!-- Top Bar -->
+    <!-- Top Editorial Bar -->
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-highlight">
-                <span class="top-pill">INSTANT GIFTICON</span>
-                <span>⚡ 스티커 카드와 휴대폰 번호를 입력하면 결제 즉시 SMS 트릿 코드가 발송됩니다!</span>
+                <span class="top-pill">AUTHENTIC GUARANTEE</span>
+                <span>공식 수입원 시리얼 정품 인증 및 2년 하드웨어 무상 보증 지원</span>
             </div>
             <div class="top-bar-links">
                 <a href="login.html">로그인</a>
@@ -33,26 +33,24 @@
     <header class="header">
         <div class="container header-main">
             <a href="index.html" class="logo">
-                <span class="logo-icon-box">🎁</span>
-                <div>
-                    ShareTreats
-                    <span class="logo-sub">SEND TREAT</span>
-                </div>
+                <span class="logo-mark">A</span>
+                <span>AURA SELECT</span>
+                <span class="logo-tag">OBJECT</span>
             </a>
 
             <div class="search-bar">
                 <span class="search-icon">🔍</span>
-                <input type="text" placeholder="브랜드나 트릿 검색..." onkeydown="if(event.key==='Enter') location.href='products.html'">
+                <input type="text" placeholder="디자이너 오브제 검색..." onkeydown="if(event.key==='Enter') location.href='products.html'">
             </div>
 
             <div class="nav-actions">
                 <a href="login.html" class="nav-btn">
-                    <span style="font-size: 1.3rem;">👤</span>
-                    <span>마이 트릿</span>
+                    <span>👤</span>
+                    <span>마이 라운지</span>
                 </a>
                 <a href="cart.html" class="nav-btn">
-                    <span style="font-size: 1.3rem;">🛍️</span>
-                    <span>선물함 (Bag)</span>
+                    <span>🛍️</span>
+                    <span>쇼핑백</span>
                     <span class="badge-count">0</span>
                 </a>
             </div>
@@ -61,11 +59,12 @@
         <nav class="gnb-menu">
             <div class="container">
                 <ul>
-                    <li><a href="index.html">Welcome (홈)</a></li>
-                    <li><a href="index.html#innovations">Innovations</a></li>
-                    <li><a href="index.html#how-it-works">How It Works</a></li>
-                    <li><a href="products.html" class="active">Brands &amp; Treats</a></li>
-                    <li><a href="cart.html">Treats Bag</a></li>
+                    <li><a href="index.html">쇼케이스 홈</a></li>
+                    <li><a href="products.html" class="active">전체 큐레이션</a></li>
+                    <li><a href="products.html?cat=audio">사운드/오디오</a></li>
+                    <li><a href="products.html?cat=desk">데스크테리어</a></li>
+                    <li><a href="products.html?cat=lighting">아키텍처 조명</a></li>
+                    <li><a href="cart.html">쇼핑백</a></li>
                 </ul>
             </div>
         </nav>
@@ -75,69 +74,62 @@
     <main class="main-wrapper">
         <div class="container">
             <!-- Breadcrumbs -->
-            <div style="font-size: 0.85rem; color: #786b65; margin-bottom: 24px;">
-                <a href="index.html">Welcome</a> &gt; <a href="products.html">Brands &amp; Treats</a> &gt; <span id="detail-category" style="color: #ff5722; font-weight: 800;">BRAND</span>
+            <div style="font-size: 0.85rem; color: #64748b; margin-bottom: 24px;">
+                <a href="index.html">쇼케이스 홈</a> &gt; <a href="products.html">전체 큐레이션</a> &gt; <span id="detail-category" style="color: #0f766e; font-weight: 800;">STUDIO</span>
             </div>
 
             <!-- Detail Grid Layout -->
             <div class="detail-grid">
-                <!-- Gallery & Sticker Preview Section -->
+                <!-- Gallery Section -->
                 <div class="detail-gallery">
                     <div class="main-preview-img">
-                        <div id="detail-icon">🎁</div>
-                        <span style="font-size: 0.82rem; font-weight: 800; background: white; color: #ff5722; padding: 6px 14px; border-radius: 999px; margin-top: 12px; box-shadow: var(--shadow-sm);">
-                            ⚡ 전국 매장 즉시 교환 가능 e-Voucher
+                        <div id="detail-icon">🛋️</div>
+                        <span style="font-size: 0.78rem; font-weight: 800; background: white; color: #0f172a; padding: 5px 14px; border-radius: 4px; margin-top: 14px; border: 1px solid #e2e8f0;">
+                            ✦ 공식 스튜디오 에디션 정품
                         </span>
                     </div>
                     <div class="gallery-thumbs">
-                        <button class="thumb-btn active" title="기본 트릿 뷰">🎁</button>
-                        <button class="thumb-btn" title="생일 스티커 카드">🎂</button>
-                        <button class="thumb-btn" title="감사 스티커 카드">💐</button>
-                        <button class="thumb-btn" title="응원 스티커 카드">🥳</button>
+                        <button class="thumb-btn active" title="정면 뷰">✦</button>
+                        <button class="thumb-btn" title="디테일 뷰">📐</button>
+                        <button class="thumb-btn" title="패키지 구성">📦</button>
                     </div>
                 </div>
 
-                <!-- Info & Treat Personalization Section -->
+                <!-- Info & Purchase Section -->
                 <div class="detail-info">
-                    <span style="color: #ff5722; font-weight: 800; font-size: 0.85rem; margin-bottom: 6px;">OFFICIAL PARTNER E-VOUCHER</span>
-                    <h2 class="detail-title" id="detail-title">트릿 정보를 불러오는 중...</h2>
+                    <span style="color: #0f766e; font-weight: 800; font-size: 0.82rem; letter-spacing: 0.5px; margin-bottom: 6px;">OFFICIAL DESIGNER CURATION</span>
+                    <h2 class="detail-title" id="detail-title">오브제 정보를 불러오는 중...</h2>
                     
                     <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                        <span id="detail-rating" style="color: #f59e0b; font-weight: 800;">★ 4.9</span>
-                        <span style="color: #f1e4dd;">|</span>
-                        <span style="color: #00bfa5; font-weight: 800; font-size: 0.9rem;">⚡ 결제 즉시 SMS 트릿 코드 발송</span>
+                        <span id="detail-rating" style="color: #d97706; font-weight: 800;">★ 4.9</span>
+                        <span style="color: #cbd5e1;">|</span>
+                        <span style="color: #059669; font-weight: 700; font-size: 0.88rem;">재고 보유 (오늘 오후 3시 이전 주문 시 당일 출고)</span>
                     </div>
 
                     <div class="detail-price-box">
                         <div style="display: flex; align-items: baseline; gap: 10px;">
-                            <span class="discount" id="detail-discount" style="font-size: 1.5rem;">15%</span>
-                            <span class="price" id="detail-price" style="font-size: 1.85rem; color: #27201c;">0원</span>
+                            <span class="discount" id="detail-discount" style="font-size: 1.45rem;">18%</span>
+                            <span class="price" id="detail-price" style="font-size: 1.8rem; color: #0f172a;">0원</span>
                             <span class="original-price" id="detail-original-price" style="font-size: 1rem;">0원</span>
                         </div>
-                        <div style="font-size: 0.84rem; color: #786b65; margin-top: 8px;">
-                            💳 신용카드 불필요: 휴대폰 결제(Load), GCash, Maya, GrabPay, 간편결제 완벽 지원
+                        <div style="font-size: 0.84rem; color: #64748b; margin-top: 8px;">
+                            무이자 할부 최대 6개월 지원 | 멤버십 5% 리워드 포인트 적립
                         </div>
                     </div>
 
-                    <!-- Step-by-Step Personalization Selector -->
+                    <!-- Option Selector -->
                     <div class="detail-options">
                         <div>
-                            <div class="option-label">STEP 1. 스티커 카드 &amp; 인사말 테마 선택</div>
+                            <div class="option-label">마감 컬러 및 패키지 옵션 선택</div>
                             <select class="option-select" id="detail-option-select">
-                                <option value="🎂 생일 축하 스티커 카드">🎂 Happy Birthday! 생일 축하 스티커 카드</option>
-                                <option value="💝 고마운 마음 감사 카드">💝 Thank You! 고마운 마음 감사 스티커 카드</option>
-                                <option value="💪 오늘 하루도 화이팅 응원 카드">💪 Cheer Up! 오늘 하루도 화이팅 응원 카드</option>
-                                <option value="🎉 축하합니다 기념일 카드">🎉 Congrats! 특별한 날 기념일 스티커 카드</option>
+                                <option value="스페이스 실버 / 기본 패키지">옵션 01. 아노다이징 스페이스 실버 (기본 패키지)</option>
+                                <option value="매트 오닉스 블랙 / 기본 패키지">옵션 02. 매트 오닉스 블랙 (기본 패키지)</option>
+                                <option value="스페이스 실버 / 기프트 하드케이스 에디션">옵션 03. 스페이스 실버 + 기프트 하드케이스 포장</option>
                             </select>
                         </div>
 
                         <div>
-                            <div class="option-label">STEP 2. 수신자 휴대폰 번호 (Recipient Mobile No.)</div>
-                            <input type="tel" class="gift-input" id="recipient-phone" placeholder="예: 010-1234-5678 또는 +63 917-123-4567" value="010-9876-5432">
-                        </div>
-
-                        <div>
-                            <div class="option-label">구매 수량 (Treats 수량)</div>
+                            <div class="option-label">주문 수량</div>
                             <div class="quantity-control">
                                 <button class="quantity-btn" onclick="changeDetailQty(-1)">-</button>
                                 <input type="text" class="quantity-input" id="detail-qty-input" value="1" readonly>
@@ -148,32 +140,32 @@
 
                     <!-- Action Buttons -->
                     <div style="display: flex; gap: 12px; margin-top: auto;">
-                        <button class="btn btn-outline" style="flex: 1; padding: 15px; font-size: 1rem;" onclick="addDetailToCart()">
-                            🛍️ 선물함(Bag) 담기
+                        <button class="btn btn-outline" style="flex: 1; padding: 15px; font-size: 0.98rem;" onclick="addDetailToCart()">
+                            🛍️ 쇼핑백 담기
                         </button>
-                        <button class="btn btn-primary" style="flex: 1.5; padding: 15px; font-size: 1rem;" onclick="buyNow()">
-                            ⚡ 지금 바로 트릿 보내기 →
+                        <button class="btn btn-primary" style="flex: 1.5; padding: 15px; font-size: 0.98rem;" onclick="buyNow()">
+                            즉시 체크아웃 결제 →
                         </button>
                     </div>
 
-                    <div style="background: #fff3ef; border: 1px solid #ffe0d6; border-radius: 12px; padding: 14px 16px; margin-top: 20px; font-size: 0.84rem; color: #574b45; line-height: 1.6;">
-                        📲 <b>즉시 교환 안내</b>: 수신자에게 발송된 10자리 Treat Code를 전국 제휴 매장에 제시하면 즉시 상품으로 교환됩니다.<br>
-                        🔄 <b>유효기간 및 환불</b>: 발행일로부터 90일 이내 전국 매장에서 사용 가능하며 미사용 코드 100% 환불을 보장합니다.
+                    <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 16px; margin-top: 20px; font-size: 0.84rem; color: #475569; line-height: 1.6;">
+                        🚚 <b>배송 안내</b>: 100,000원 이상 구매 시 전 지역 무료배송 (전용 완충 패키지 적용)<br>
+                        🛡️ <b>품질 보증</b>: 수령일로부터 2년간 공식 하드웨어 무상 보증 및 케어 서비스 제공
                     </div>
                 </div>
             </div>
 
             <!-- Description Box -->
-            <div style="background: white; border: 1.5px solid #f1e4dd; border-radius: 16px; padding: 36px;">
-                <h3 style="font-size: 1.3rem; font-weight: 900; margin-bottom: 14px;">트릿 바우처 이용 및 매장 교환 가이드 (How to Redeem)</h3>
-                <p style="color: #574b45; line-height: 1.8; margin-bottom: 24px;">
-                    Share Treats의 모든 모바일 바우처는 공식 제휴 브랜드와 실시간 연동되어 발행됩니다. 실물 카드나 종이 상품권 없이 모바일 SMS 메시지 하나로 전국 매장에서 편리하게 교환하세요.
+            <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 36px;">
+                <h3 style="font-size: 1.25rem; font-weight: 900; margin-bottom: 14px;">큐레이션 노트 및 하드웨어 제원</h3>
+                <p style="color: #475569; line-height: 1.8; margin-bottom: 24px;">
+                    불필요한 장식을 덜어내고 소재 본연의 질감과 비례감에 집중한 스튜디오 오리지널 프로덕트입니다. 공간의 인상을 차분하게 정돈하며 오랜 시간 사용해도 변치 않는 내구성을 자랑합니다.
                 </p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: #fffaf7; padding: 20px; border-radius: 12px; border: 1px solid #f1e4dd; font-size: 0.9rem;">
-                    <div>• <b>발송 방식</b>: 결제 즉시 SMS 문자 및 이메일 실시간 전송</div>
-                    <div>• <b>교환처</b>: 해당 브랜드 전국 오프라인 매장 (일부 특수매장 제외)</div>
-                    <div>• <b>결제 수단</b>: 휴대폰 소액결제(Load), GCash, Maya, GrabPay, 카드</div>
-                    <div>• <b>고객센터</b>: Share Treats Care (1588-0000 / support@sharetreats.ph)</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 0.88rem;">
+                    <div>• <b>소재 및 마감</b>: CNC 가공 알루미늄 / 친환경 매트 코팅</div>
+                    <div>• <b>품질 인증</b>: CE / KC 안전 인증 및 공식 수입 시리얼 보증</div>
+                    <div>• <b>컨시어지 센터</b>: AURA SELECT 케어 데스크 (1644-8200)</div>
+                    <div>• <b>교환 및 반품</b>: 수령 후 14일 이내 미개봉 상태 무상 교환/반품 가능</div>
                 </div>
             </div>
         </div>
@@ -183,8 +175,8 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom" style="border: none; padding-top: 0;">
-                <span>&copy; 2026 Share Treats Innovation Corp. &amp; MyShop. All rights reserved.</span>
-                <span>Nginx &amp; Tomcat WAS 아키텍처 호환</span>
+                <span>&copy; 2026 AURA SELECT Studio Inc. All rights reserved.</span>
+                <span>Nginx &amp; Tomcat WAS 아키텍처 호환 · Build v0.02</span>
             </div>
         </div>
     </footer>

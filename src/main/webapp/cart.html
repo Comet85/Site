@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treats Bag (선물함) - Share Treats</title>
+    <title>쇼핑백 (Shopping Bag) — AURA SELECT</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Build Version Bar -->
+    <!-- Build Version Bar (v0.02) -->
     <div class="build-version-bar">
         <div class="container">
-            <span>Share Treats Web UI · <strong class="build-version-badge js-build-version">Build v0.01</strong></span>
-            <span>Design Theme: sharetreats.ph/welcome</span>
+            <span>AURA SELECT Web UI · <strong class="build-version-badge js-build-version">Build v0.02</strong></span>
+            <span>Architecture: Editorial Nordic &amp; Tech Select Store</span>
         </div>
     </div>
 
-    <!-- Top Bar -->
+    <!-- Top Editorial Bar -->
     <div class="top-bar">
         <div class="container">
             <div class="top-bar-highlight">
-                <span class="top-pill">INSTANT GIFTICON</span>
-                <span>⚡ 모든 디지털 트릿 바우처는 발송 수수료가 무료입니다!</span>
+                <span class="top-pill">CONCIERGE DELIVERY</span>
+                <span>10만원 이상 구매 시 전 품목 무료배송 및 전용 하드케이스 완충 포장</span>
             </div>
             <div class="top-bar-links">
                 <a href="login.html">로그인</a>
@@ -33,26 +33,24 @@
     <header class="header">
         <div class="container header-main">
             <a href="index.html" class="logo">
-                <span class="logo-icon-box">🎁</span>
-                <div>
-                    ShareTreats
-                    <span class="logo-sub">TREATS BAG</span>
-                </div>
+                <span class="logo-mark">A</span>
+                <span>AURA SELECT</span>
+                <span class="logo-tag">BAG</span>
             </a>
 
             <div class="search-bar">
                 <span class="search-icon">🔍</span>
-                <input type="text" placeholder="더 선물할 브랜드나 트릿 검색..." onkeydown="if(event.key==='Enter') location.href='products.html'">
+                <input type="text" placeholder="추가할 오브제를 검색하세요..." onkeydown="if(event.key==='Enter') location.href='products.html'">
             </div>
 
             <div class="nav-actions">
                 <a href="login.html" class="nav-btn">
-                    <span style="font-size: 1.3rem;">👤</span>
-                    <span>마이 트릿</span>
+                    <span>👤</span>
+                    <span>마이 라운지</span>
                 </a>
                 <a href="cart.html" class="nav-btn">
-                    <span style="font-size: 1.3rem;">🛍️</span>
-                    <span>선물함 (Bag)</span>
+                    <span>🛍️</span>
+                    <span>쇼핑백</span>
                     <span class="badge-count">0</span>
                 </a>
             </div>
@@ -61,11 +59,11 @@
         <nav class="gnb-menu">
             <div class="container">
                 <ul>
-                    <li><a href="index.html">Welcome (홈)</a></li>
-                    <li><a href="index.html#innovations">Innovations</a></li>
-                    <li><a href="index.html#how-it-works">How It Works</a></li>
-                    <li><a href="products.html">Brands &amp; Treats</a></li>
-                    <li><a href="cart.html" class="active">Treats Bag (선물함)</a></li>
+                    <li><a href="index.html">쇼케이스 홈</a></li>
+                    <li><a href="products.html">전체 큐레이션</a></li>
+                    <li><a href="products.html?cat=audio">사운드/오디오</a></li>
+                    <li><a href="products.html?cat=desk">데스크테리어</a></li>
+                    <li><a href="cart.html" class="active">쇼핑백</a></li>
                 </ul>
             </div>
         </nav>
@@ -74,14 +72,14 @@
     <!-- Main Content -->
     <main class="main-wrapper">
         <div class="container">
-            <h2 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 24px;">🛍️ 내 선물함 (Treats Bag)</h2>
+            <h2 style="font-size: 1.75rem; font-weight: 900; margin-bottom: 24px;">🛍️ 쇼핑백 (Shopping Bag)</h2>
 
             <!-- Empty Cart Message -->
-            <div id="cart-empty-message" style="display: none; background: white; border: 1.5px dashed #f1e4dd; border-radius: 20px; padding: 64px 24px; text-align: center;">
-                <div style="font-size: 4.2rem; margin-bottom: 16px;">🎁</div>
-                <h3 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 8px;">선물함(Treats Bag)이 비어 있습니다.</h3>
-                <p style="color: #786b65; margin-bottom: 24px;">소중한 사람에게 보낼 달콤한 모바일 트릿을 담아보세요!</p>
-                <a href="products.html" class="btn btn-primary" style="padding: 13px 28px;">인기 트릿 구경하러 가기 →</a>
+            <div id="cart-empty-message" style="display: none; background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 64px 24px; text-align: center;">
+                <div style="font-size: 4rem; margin-bottom: 16px;">🛋️</div>
+                <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 8px;">쇼핑백에 담긴 오브제가 없습니다.</h3>
+                <p style="color: #64748b; margin-bottom: 24px;">AURA SELECT가 엄선한 디자이너 조명과 오디오 컬렉션을 탐색해 보세요.</p>
+                <a href="products.html" class="btn btn-primary" style="padding: 13px 28px;">큐레이션 아카이브 보러 가기 →</a>
             </div>
 
             <!-- Cart Content Wrapper -->
@@ -89,15 +87,15 @@
                 <!-- Items Table -->
                 <div>
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                        <span style="font-size: 0.9rem; font-weight: 700; color: #786b65;">발송 대기 중인 트릿 목록</span>
-                        <button style="background: none; border: none; color: #ef4444; font-size: 0.85rem; font-weight: 800; cursor: pointer;" onclick="clearCart()">전체 비우기</button>
+                        <span style="font-size: 0.9rem; font-weight: 700; color: #64748b;">선택한 오브제 목록</span>
+                        <button style="background: none; border: none; color: #e11d48; font-size: 0.84rem; font-weight: 800; cursor: pointer;" onclick="clearCart()">쇼핑백 비우기</button>
                     </div>
 
                     <table class="cart-table">
                         <thead>
                             <tr>
-                                <th>트릿 바우처 &amp; 스티커 카드</th>
-                                <th style="width: 110px;">단가</th>
+                                <th>오브제 정보</th>
+                                <th style="width: 120px;">판매가</th>
                                 <th style="width: 130px;">수량</th>
                                 <th style="width: 130px;">합계금액</th>
                                 <th style="width: 80px;">관리</th>
@@ -109,49 +107,33 @@
                     </table>
                 </div>
 
-                <!-- Order Summary & Payment Gateway -->
+                <!-- Order Summary -->
                 <aside class="cart-summary-box">
-                    <h3 style="font-size: 1.2rem; font-weight: 900; margin-bottom: 18px;">트릿 발송 및 결제 정보</h3>
-
-                    <div style="margin-bottom: 18px;">
-                        <label style="display: block; font-size: 0.82rem; font-weight: 800; margin-bottom: 6px;">📲 수신자 휴대폰 번호</label>
-                        <input type="tel" class="gift-input" value="010-9876-5432" style="padding: 10px 12px; font-size: 0.9rem;">
-                    </div>
-
-                    <div style="margin-bottom: 20px;">
-                        <label style="display: block; font-size: 0.82rem; font-weight: 800; margin-bottom: 6px;">💳 간편 결제 수단 선택 (No Card Needed)</label>
-                        <select class="option-select" style="padding: 10px 12px; font-size: 0.9rem;">
-                            <option>📱 휴대폰 소액결제 (Airtime Load)</option>
-                            <option>💙 GCash / GLife e-Wallet</option>
-                            <option>💚 Maya / GrabPay Wallet</option>
-                            <option>💛 카카오페이 / 네이버페이</option>
-                            <option>💳 신용/체크카드</option>
-                        </select>
-                    </div>
+                    <h3 style="font-size: 1.15rem; font-weight: 900; margin-bottom: 18px;">주문 요약 (Order Summary)</h3>
 
                     <div class="summary-row">
-                        <span style="color: #786b65;">총 트릿 금액</span>
+                        <span style="color: #64748b;">총 상품 금액</span>
                         <span id="cart-subtotal" style="font-weight: 800;">0원</span>
                     </div>
 
                     <div class="summary-row">
-                        <span style="color: #786b65;">SMS 코드 발송 수수료</span>
-                        <span id="cart-shipping" style="font-weight: 800; color: #00bfa5;">무료 (SMS 즉시발송)</span>
+                        <span style="color: #64748b;">컨시어지 배송비</span>
+                        <span id="cart-shipping" style="font-weight: 800; color: #0f766e;">무료배송</span>
                     </div>
 
                     <div class="summary-row summary-total">
-                        <span>최종 결제 금액</span>
+                        <span>총 결제 예정 금액</span>
                         <span id="cart-grand-total">0원</span>
                     </div>
 
-                    <div style="margin: 22px 0 14px;">
-                        <button class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.05rem;" onclick="checkout()">
-                            🎁 결제하고 트릿 코드 즉시 발송 →
+                    <div style="margin: 24px 0 14px;">
+                        <button class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1rem;" onclick="checkout()">
+                            체크아웃 주문 완료하기 →
                         </button>
                     </div>
 
-                    <p style="font-size: 0.78rem; color: #9ca3af; text-align: center; line-height: 1.5;">
-                        결제 완료 즉시 10자리 고유 Treat Code가 수신자 SMS로 전송됩니다.
+                    <p style="font-size: 0.78rem; color: #94a3b8; text-align: center; line-height: 1.5;">
+                        공식 시리얼 보증서 동봉 · SSL 보안 결제 지원
                     </p>
                 </aside>
             </div>
@@ -162,8 +144,8 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom" style="border: none; padding-top: 0;">
-                <span>&copy; 2026 Share Treats Innovation Corp. &amp; MyShop. All rights reserved.</span>
-                <span>Nginx &amp; Tomcat WAS 아키텍처 호환</span>
+                <span>&copy; 2026 AURA SELECT Studio Inc. All rights reserved.</span>
+                <span>Nginx &amp; Tomcat WAS 아키텍처 호환 · Build v0.02</span>
             </div>
         </div>
     </footer>
@@ -173,7 +155,7 @@
         function checkout() {
             const cart = getCart();
             if (cart.length === 0) {
-                alert("선물함이 비어 있습니다.");
+                alert("쇼핑백이 비어 있습니다.");
                 return;
             }
             window.location.href = "order-success.html";
